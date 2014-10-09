@@ -10,13 +10,25 @@
 	?>
 </head>
 <body>
-	<p>We're using page-12.php.</p>
-	<?php 
+	<p>We're using single-books.php.</p>
+
+	<?php
+	$year = get_field( "year_published");
+	$author = get_field( "author_name");
+
 	if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post(); 
-			echo(' :) ');
-			the_content();
+
+			if ($year >= 2000) {
+				the_title();
+				the_content();
+			} else {
+				echo "Sorry, this book is too old. This book is from $year.";
+			}
+
+
+
 
 	} // end while
 } // end if

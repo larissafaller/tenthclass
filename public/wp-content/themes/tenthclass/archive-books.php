@@ -10,7 +10,7 @@
 	?>
 </head>
 <body>
-	<p>We're using page-12.php.</p>
+	<p>This is the archive-books.php file.</p>
 	<?php 
 	if ( have_posts() ) {
 		while ( have_posts() ) {

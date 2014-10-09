@@ -4,7 +4,10 @@
 	<meta charset="UTF-8">
 	<title><?php wp_title(); ?></title>
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
-	
+	<?php
+	wp_head();
+
+	?>
 </head>
 <body>
 	<p>We're using front-page.php.</p>
