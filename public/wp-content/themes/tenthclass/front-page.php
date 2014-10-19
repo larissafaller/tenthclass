@@ -10,16 +10,31 @@
 	?>
 </head>
 <body>
-	<p>We're using front-page.php.</p>
-	<?php 
-	if ( have_posts() ) {
-		while ( have_posts() ) {
-			the_post(); 
-			echo(' :) ');
-			the_content();
+	<div class='content'>
+		<p>We're using front-page.php.</p>
+		<?php 
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post(); 
+				echo(' :) ');
+				the_content();
 
 	} // end while
 } // end if
 ?>
+</div>	
+<?php 
+if ( is_active_sidebar( 'main-sidebar' ) ) {
+	echo "<div class='sidebar'>";
+	//dynamic_sidebar puts the widget in.
+	dynamic_sidebar( 'main-sidebar');
+	echo "</div>";
+}
+
+
+
+
+?>
+
 </body>
 </html>
