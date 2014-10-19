@@ -28,6 +28,17 @@ Template Name: Your Custom Page
 
 	} // end while
 } // end if
+
+?>
+</div>	
+<?php 
+if ( is_active_sidebar( 'main-sidebar' ) ) {
+	echo "<div class='sidebar'>";
+	//dynamic_sidebar puts the widget in.
+	dynamic_sidebar( 'main-sidebar');
+	echo "</div>";
+}
+
 ?>
 </body>
 </html>
