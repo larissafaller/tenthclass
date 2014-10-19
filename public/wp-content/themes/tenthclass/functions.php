@@ -68,14 +68,6 @@ function lar_footer_slug_widgets_init() {
 add_action( 'widgets_init', 'lar_footer_slug_widgets_init' );
 
 
-// HOMEWORK
-
-// If every page uses the same Main Sidebar, then if you add a calendar widget to the sidebar the calendar widget will display on every page. So let's:
-
-// 1 ) create three sidebars:
-// Main Sidebar
-// Secondary Sidebar
-// Tertiary Sidebar
 
 // 2) When you create/edit a Page in WordPress, there should be a way to select which sidebar you want to appear. For example, if you create a page called, "Favourite Books Stores", you may want to have it use the Secondary Sidebar.
 
