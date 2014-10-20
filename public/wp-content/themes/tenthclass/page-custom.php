@@ -16,18 +16,22 @@ Template Name: Your Custom Page
 	?>
 </head>
 <body>
-	<p>We're using page-custom.php.</p>
+	<div class='content'>
+		<p>We're using page-custom.php.</p>
 
-	<?php 
+		<?php 
 
-	if ( have_posts() ) {
-		while ( have_posts() ) {
-			the_post(); 
-			echo(' :) ');
-			the_content();
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post(); 
+				echo(' :) ');
+				the_content();
 
 	} // end while
 } // end if
+?>
+</div>	
+<?php 
 
 // get_sidebar( get_field('secondary_sidebar') );
 
@@ -61,9 +65,6 @@ Template Name: Your Custom Page
 // Trying to connect to sidebar selector...
 $lar_sidebar = get_field('acf_field_sidebar_selector');
 
-?>
-</div>
-<?php 
 
 // If the sidebar is active (selected), then show sidebar. Else, show text.
 if ( is_active_sidebar( '$lar_sidebar' ) ) {
@@ -72,6 +73,7 @@ if ( is_active_sidebar( '$lar_sidebar' ) ) {
 	dynamic_sidebar( '$lar_sidebar');
 	echo "</div>";
 } else {
+	echo "<div class='sidebar'>";
 	echo "Taiwan has the best books!";
 	echo "</div>";
 }
