@@ -29,27 +29,50 @@ Template Name: Your Custom Page
 	} // end while
 } // end if
 
-if ( is_active_sidebar( 'main-sidebar' ) ) {
-	echo "<div class='sidebar'>";
+// get_sidebar( get_field('secondary_sidebar') );
 
-	// dynamic_sidebar puts the widget in.
-	dynamic_sidebar( 'main-sidebar');
+// if ( is_active_sidebar( 'main-sidebar' ) ) {
+// 	echo "<div class='sidebar'>";
+
+// 	// dynamic_sidebar puts the widget in.
+// 	dynamic_sidebar( 'main-sidebar');
+// 	echo "</div>";
+// }
+
+// if ( is_active_sidebar( 'secondary-sidebar' ) ) {
+// 	echo "<div class='sidebar'>";
+
+// 	// dynamic_sidebar puts the widget in.
+// 	dynamic_sidebar( 'secondary-sidebar');
+// 	echo "</div>";
+// }
+
+// if ( is_active_sidebar( 'tertiary-sidebar' ) ) {
+// 	echo "<div class='sidebar'>";
+
+// 	// dynamic_sidebar puts the widget in.
+// 	dynamic_sidebar( 'tertiary-sidebar');
+// 	echo "</div>";
+// }
+
+
+
+
+// Trying to connect to sidebar selector...
+$lar_sidebar = get_field('acf_field_sidebar_selector');
+
+?>
+</div>
+<?php 
+
+// If the sidebar is active (selected), then show sidebar. Else, show text.
+if ( is_active_sidebar( '$lar_sidebar' ) ) {
+	echo "<div class='sidebar'>";
+	//dynamic_sidebar puts the widget in.
+	dynamic_sidebar( '$lar_sidebar');
 	echo "</div>";
-}
-
-if ( is_active_sidebar( 'secondary-sidebar' ) ) {
-	echo "<div class='sidebar'>";
-
-	// dynamic_sidebar puts the widget in.
-	dynamic_sidebar( 'secondary-sidebar');
-	echo "</div>";
-}
-
-if ( is_active_sidebar( 'tertiary-sidebar' ) ) {
-	echo "<div class='sidebar'>";
-
-	// dynamic_sidebar puts the widget in.
-	dynamic_sidebar( 'tertiary-sidebar');
+} else {
+	echo "Taiwan has the best books!";
 	echo "</div>";
 }
 
